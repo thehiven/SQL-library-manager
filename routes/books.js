@@ -92,7 +92,21 @@ router.route('/:id')
         book.update(req.body)
           .then(() => {
             res.redirect('/books');
+          })
+          // handle validation error
+          .catch(error => {
+            if (error.name === 'SequelizeValidationError') {
+              res.render('update-book', { title: book.title, book, errors: error.errors });
+            } else {
+              throw error;
+            }
+          })
+          .catch(() => {
+            res.send(500);
           });
+      })
+      .catch(error => {
+        res.send(500);
       });
   });
 
