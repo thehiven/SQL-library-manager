@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1 Books
+  p
+    a(class='button' href='/books/new') Create New Book
+
+  form(action='/books/search' method='get')
+    p.search
+      input(type='text' name='query' placeholder='Type title, author, genre, or year...')
+      input(type='submit' value='Search')
+
+  table
+    thead
+      tr
+        th Title
+        th Author
+        th Genre
+        th Year
+    tbody
+      each book in books
+        tr.book-element
+          td
+            a(href=`/books/${book.id}`)= book.title
+          td= book.author
+          td= book.genre
+          td= book.year
+  
+  if search
+    p
+      a(class='button' href='/books') Back
+
+  unless search
+    script(src='/static/js/pagination.js')

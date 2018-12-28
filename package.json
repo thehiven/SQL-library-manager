@@ -1,0 +1,30 @@
+{
+  "name": "techdegree-project-8",
+  "version": "1.0.0",
+  "description": "SQL Library Manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thehiven/techdegree-project-8.git"
+  },
+  "author": "Vlad Nadtoka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thehiven/techdegree-project-8/issues"
+  },
+  "homepage": "https://github.com/thehiven/techdegree-project-8#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
